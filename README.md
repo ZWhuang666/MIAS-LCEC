@@ -13,26 +13,7 @@ Zhiwei Huang proposed a novel LiDAR-camera extrinsic calibration framework based
 :star: **What can Zvision do?** Zvision is a versatile calibration toolbox, .
 
 :star: **How to Adapt from SAM to MobileSAM?** Since MobileSAM keeps exactly the same pipeline as the original SAM, we inherit pre-processing, post-processing, and all other interfaces from the original SAM. Therefore, by assuming everything is exactly the same except for a smaller image encoder, those who use the original SAM for their projects can **adapt to MobileSAM with almost zero effort**.
-* The comparison of ViT-based image encoder is summarzed as follows: 
 
-    Image Encoder                                      | Original SAM | MobileSAM 
-    :-----------------------------------------:|:---------|:-----:
-    Parameters      |  611M   | 5M
-    Speed      |  452ms  | 8ms
-
-* Original SAM and MobileSAM have exactly the same prompt-guided mask decoder: 
-
-    Mask Decoder                                      | Original SAM | MobileSAM 
-    :-----------------------------------------:|:---------|:-----:
-    Parameters      |  3.876M   | 3.876M
-    Speed      |  4ms  | 4ms
-
-* The comparison of the whole pipeline is summarized as follows:
-
-    Whole Pipeline (Enc+Dec)                                      | Original SAM | MobileSAM 
-    :-----------------------------------------:|:---------|:-----:
-    Parameters      |  615M   | 9.66M
-    Speed      |  456ms  | 12ms
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 1. Publication:
@@ -74,19 +55,18 @@ maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and 
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
-
 ## 4. Installation
-## 4.1 Zvision GUI (C++)
-For Zvision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/doc/installation.md)
-## 4.2 Zvision C3M (Python)
-For Zvision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/zvisionpython)
+### 4.1 LCVision GUI (C++)
+For LCVision GUI, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/doc/installation.md)
+### 4.2 LCVision C3M (Python)
+For LCVision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/zvisionpython)
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
-Please refer to the [user guide](https://github.com/ZWhuang666/LCVision/tree/main/doc/program.md)
+Please refer to the [user guide](https://github.com/ZWhuang666/LCVision/tree/main/doc/program.md) for application details of this toolbox.
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
-## 6. Contact
 
+## 6. Contact
 Please feel free to drop me emails (Zhiwei Huang, [@outlook.com](zhiwei.huang@outlook.com)) if you have any questions.
 
 
