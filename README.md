@@ -1,1 +1,93 @@
-# LCVision 
+<p float="center">
+  <img src="assets/cover.png?raw=true" width="99.1%" />
+</p>
+
+# Zvision (Versatile LiDAR-Camera Calibration toolbox)
+Zhiwei Huang proposed a novel LiDAR-camera extrinsic calibration framework based on large vision modal and invented a cross-modal mask matching algorithm;
+
+:pushpin: Online,Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching, available at [arXiv](https://arxiv.org/abs/2404.18083).
+
+:grapes: Toolbox versions
+* **2024/07/1**: Zvision has been developed by Zhiwei Huang @Tongji University.
+
+:star: **What can Zvision do?** Zvision is a versatile calibration toolbox, .
+
+:star: **How to Adapt from SAM to MobileSAM?** Since MobileSAM keeps exactly the same pipeline as the original SAM, we inherit pre-processing, post-processing, and all other interfaces from the original SAM. Therefore, by assuming everything is exactly the same except for a smaller image encoder, those who use the original SAM for their projects can **adapt to MobileSAM with almost zero effort**.
+* The comparison of ViT-based image encoder is summarzed as follows: 
+
+    Image Encoder                                      | Original SAM | MobileSAM 
+    :-----------------------------------------:|:---------|:-----:
+    Parameters      |  611M   | 5M
+    Speed      |  452ms  | 8ms
+
+* Original SAM and MobileSAM have exactly the same prompt-guided mask decoder: 
+
+    Mask Decoder                                      | Original SAM | MobileSAM 
+    :-----------------------------------------:|:---------|:-----:
+    Parameters      |  3.876M   | 3.876M
+    Speed      |  4ms  | 4ms
+
+* The comparison of the whole pipeline is summarized as follows:
+
+    Whole Pipeline (Enc+Dec)                                      | Original SAM | MobileSAM 
+    :-----------------------------------------:|:---------|:-----:
+    Parameters      |  615M   | 9.66M
+    Speed      |  456ms  | 12ms
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+## 1. Publication:
+This [paper (arxiv preprint)](https://arxiv.org/pdf/2005.08165.pdf) was accepted to RA-L and ICRA'21. In this repository, we publish our MATLAB, C++, and CUDA code. 
+
+Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))](https://arxiv.org/abs/2404.18083) when using our source code or datasets:
+```
+@article{huang2024online,
+  title={Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching},
+  author={Huang, Zhiwei and Zhang, Yikang and Chen, Qijun and Fan, Rui},
+  journal={arXiv preprint arXiv:2404.18083},
+  year={2024}
+}
+```
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+## 2. Demo Video:
+In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm; (b) ; (c) The introduction of three real world dataset; (d) The calibration example using our toolbox Zvision.
+
+<p align="center">
+<img src='./figs/video.gif' width=500px>
+</p>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+
+## 3. Datasets
+Two solid-state Livox LiDARs (Livox Mid-70 and Livox Mid0360) and one MindVision camera are utilized for data acquisition. We have created the following three real-world datasets:
+**MIAS-LCEC-TF70 (target-free)**, **MIAS-LCEC-CB70 (target-based)**, **and MIAS-LCEC-TF360 (target-free)**, which are now publicly available at [xxx](http://) for researchers to evaluate the performance of LCEC approaches.
+
+<p align="center">
+<img src='./figs/experimental_results.png' width=600px>
+</p>
+
+*<sup>(1)–(5) columns on (a), (d) and (g) rows show the 3-D mesh models, depth images, surface normal ground truth
+and the experimental results obtained using FD-Mean and FD-Median SNEs (ours), respectively; (1)–(5) columns on (b), (e) and (h) rows show the angular error
+maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and FALS SNEs, respectively; (1)–(5) columns on
+(c), (f) and (i) rows show the angular error maps obtained by SRI, LINE-MOD, SNE-RoadSeg, FD-Mean and FD-Median SNEs, respectively.</sup>*
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+
+## 4. Installation
+## 4.1 Zvision GUI (C++)
+
+## 4.2 Zvision C3M (Python)
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+## 5. Getting Started
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+## 6. Contact
+
+Please feel free to drop me emails (Zhiwei Huang, [@outlook.com](zhiwei.huang@outlook.com)) if you have any questions.
+
+
+
