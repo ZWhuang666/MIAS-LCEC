@@ -1,7 +1,7 @@
 # Introduction
 C3M is a powerful cross-modal mask matching algorithm
 <p float="center">
-  <img src="assets/cover.png?raw=true" width="99.1%" />
+  <img src="assets/LSCLAW.png?raw=true" width="99.1%" />
 </p>
 
 #Installation
