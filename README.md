@@ -77,13 +77,13 @@ maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and 
 
 ## 4. Installation
 ## 4.1 Zvision GUI (C++)
-
+For Zvision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/doc/installation.md)
 ## 4.2 Zvision C3M (Python)
-
+For Zvision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/zvisionpython)
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
-
+Please refer to the [user guide](https://github.com/ZWhuang666/LCVision/tree/main/doc/program.md)
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 ## 6. Contact
 
