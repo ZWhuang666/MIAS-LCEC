@@ -14,6 +14,7 @@ the program consist of two independent pacakge:
 
 To start the toolbox, you only need to run the shell script LCVision.sh
 ```bash
+cd ~/LCVision
 sh LCVision.sh
 ```
 
