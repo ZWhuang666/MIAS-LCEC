@@ -39,7 +39,7 @@ cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 sudo make install
 
-# in some case the zvision can't find iridescence package, please add the /usr/local/lib into the ld.so.conf using below command
+# in some case the LCVision can't find iridescence package, please add the /usr/local/lib into the ld.so.conf using below command
 sudo vim /etc/ld.so.conf
 
 # make the config into effective
@@ -85,14 +85,29 @@ pip install timm
 pip install pyautogui
 pip install pygame
 
-#如果安装的pytorch与torchvision 版本不对，需要再重新安装torchvision
+#if the installed pytorch has a version comflication on torchvision，you need to delete your current torchvision and install again
 
 ```
-## Build zvision
+## Build LCVision
+Download LCVision from GitHub
 
 ```bash
-# ROS2
-cd ~/zvision_ws/src
-git clone https://github.com/mias/zvision.git --recursive
-cd .. && colcon build
+cd ~/LCVision_ws/src/zvisionpython/src
+gedit config.json
 ```
+
+There will be the following contents in the config.json
+
+```
+...
+```
+
+Please rewrite "conda_path" and "sam_path" to your own installation location. For conda_path, e.g., you can viewe your conda environment path by
+
+```bash
+conda env list
+
+```
+
+For sam_path, e.g., if you download sam through GitHub at ~/MobileSAM, there should be "~/MobileSAM". 
+ 
