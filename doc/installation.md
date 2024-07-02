@@ -109,5 +109,5 @@ conda env list
 
 ```
 
-For sam_path, e.g., if you download sam through GitHub at ~/MobileSAM, there should be "~/MobileSAM". 
+For sam_path, e.g., if you download sam through GitHub at "~/MobileSAM", there should be "~/MobileSAM". 
  
