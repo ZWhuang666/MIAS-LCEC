@@ -7,24 +7,16 @@
 the program consist of two independent pacakge:
 | No. | Package Name  | Function                                                             |
 | :-: | :-----------: | :--------------------------------------------------------------------|
-|  1  |    zvision    | A c++ package , which is the main UI of the project                  |
-|  2  | zvisionpython | A python package, the main function is to receive command and data from zvision package and complete the segmentation function and match function, and then send the matched points pair back to zvision package for further PNP. |
+|  1  |    LCVision    | A c++ package , which is the main UI of the project                  |
+|  2  | LCVisionpython | A python package, the main function is to receive command and data from LCVision package and complete the segmentation function and match function, and then send the matched points pair back to LCVision package for further PNP. |
 
-***the zvision package and zvisionpython package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both zvision package and zvisionpython package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run zvision and zvisionpython on two or more computers at the same time, please disconnect the computers with the network***
+***the LCVision package and LCVisionpython package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both LCVision package and LCVisionpython package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run LCVision and LCVisionpython on two or more computers at the same time, please disconnect the computers with the network***
 
-### 1.1 Start Program Option 1
+To start the toolbox, you only need to run the shell script LCVision.sh
 ```bash
-# open a new terminal and run python package
-ros2 run zvisionpython LcMatch
-
-# open a new terminal and run c++ package
-ros2 run zvision iviewer
-
+sh LCVision.sh
 ```
-### 1.2 Start Program Option 2
-```bash
-ros2 launch zvlaunch.py
-```
+
 ## 2. UI introduction
 
 ### 2.1 control panel
