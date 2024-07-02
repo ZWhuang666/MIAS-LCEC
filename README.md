@@ -2,15 +2,15 @@
   <img src="assets/cover.png?raw=true" width="99.1%" />
 </p>
 
-# Zvision (Versatile LiDAR-Camera Calibration toolbox)
+# LCVision (Versatile LiDAR-Camera Calibration toolbox)
 Zhiwei Huang proposed a novel LiDAR-camera extrinsic calibration framework based on large vision modal and invented a cross-modal mask matching algorithm;
 
-:pushpin: Online,Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching, available at [arXiv](https://arxiv.org/abs/2404.18083).
+:pushpin: Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching, available at [arXiv](https://arxiv.org/abs/2404.18083).
 
 :grapes: Toolbox versions
-* **2024/07/1**: Zvision has been developed by Zhiwei Huang @Tongji University.
+* **2024/07/1**: LCVision has been developed by Zhiwei Huang @Tongji University.
 
-:star: **What can Zvision do?** Zvision is a versatile calibration toolbox, .
+:star: **What can LCVision do?** LCVision is a versatile calibration toolbox, .
 
 :star: **How to Adapt from SAM to MobileSAM?** Since MobileSAM keeps exactly the same pipeline as the original SAM, we inherit pre-processing, post-processing, and all other interfaces from the original SAM. Therefore, by assuming everything is exactly the same except for a smaller image encoder, those who use the original SAM for their projects can **adapt to MobileSAM with almost zero effort**.
 
@@ -31,10 +31,10 @@ Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))]
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 2. Demo Video:
-In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm; (b) ; (c) The introduction of three real world dataset; (d) The calibration example using our toolbox Zvision.
+In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm; (b) ; (c) The introduction of three real-world datasets; (d) The calibration example using our toolbox LCVision.
 
 <p align="center">
-<img src='./figs/video.gif' width=500px>
+<img src='./assets/MIAS-LCEC-DEMO.gif' width=500px>
 </p>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
@@ -59,7 +59,7 @@ maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and 
 ### 4.1 LCVision GUI (C++)
 For LCVision GUI, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/doc/installation.md)
 ### 4.2 LCVision C3M (Python)
-For LCVision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/zvisionpython)
+For LCVision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/LCVisionpython)
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
