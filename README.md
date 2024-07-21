@@ -53,6 +53,8 @@ and the experimental results obtained using FD-Mean and FD-Median SNEs (ours), r
 maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and FALS SNEs, respectively; (1)–(5) columns on
 (c), (f) and (i) rows show the angular error maps obtained by SRI, LINE-MOD, SNE-RoadSeg, FD-Mean and FD-Median SNEs, respectively.</sup>*
 
+Our datasets is public available at [Google Drive](https://drive.google.com/open?id=1-9dsrJVGIpYYzdxljBMHtFychXX0BsOX&usp=drive_fs) and [Baidu Net Disk](https://pan.baidu.com/s/1pYPzNmDKru4WhEcVQwgdUg?pwd=z2qg)
+
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 4. Installation
