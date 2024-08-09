@@ -2,20 +2,20 @@
 
 ![]()
 
-## 1. Start the program
+## 1. Start MIAS-LCEC Toolbox
 
-the program consist of two independent pacakge:
+The program consist of two independent pacakge:
 | No. | Package Name  | Function                                                             |
 | :-: | :-----------: | :--------------------------------------------------------------------|
-|  1  |    Zvision    | A c++ package , which is the main UI of the project                  |
-|  2  | Zvisionpython | A python package, the main function is to receive command and data from Zvision package and complete the segmentation function and match function, and then send the matched points pair back to Zvision package for further PNP. |
+|  1  |    zvision    | A c++ package , which is the main UI of the project                  |
+|  2  |     c3m       | A python package, the main function is to receive command and data from iviewer package and complete the segmentation function and match function, and then send the matched points pair back to iviewer package for further PNP. |
 
-***the Zvision package and Zvisionpython package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both Zvision package and Zvisionpython package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run Zvision and Zvisionpython on two or more computers at the same time, please disconnect the computers with the network***
+***the zvsion package and c3m package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both zvision package and c3m package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run zvision and c3m on two or more computers at the same time, please disconnect the computers with the network***
 
-To start the toolbox, you only need to run the shell script Zvision.sh
+To start MIAS-LCEC Toolbox, you only need to run:
 ```bash
-cd ~/Zvision
-sh Zvision.sh
+cd ~/MIAS-LCEC/
+sh mias_lcec.sh
 ```
 
 ## 2. UI introduction
@@ -123,36 +123,12 @@ Rendering function is designed to observe the fusion effect of cloud and camera 
 |  4   | Press "Render Camera by Cloud ", a rendered picture will appeared in the cloud image window        |
 |  5   | Press "Render Cloud by Camera ", the cloud will be rendered by the image                           |
 
-## 5. Checkboard Calibration & Evaluation
-### 5.1 Checkboard Calibration
-Checkboard calibration function is an offline calibration method to calibrate the clouds and matching images with a checkboard.
-| step |  operation                                                                                         |
-| :-:  | :-----------                                                                                       |
-|  1   | press "load cloudPoints" button to load a cloud                                                    |
-|  2   | press "read json" button to load a json file including intrinsic/distcoeffs/picRenderChoice        |
-|  3   | Press "load CameraSrc" Button to load a image, make sure the "undistort" checkbox is selected      |
-|  4   | Press "CB calibration " Button                                                                     |
-|  5   | select a json file of intrinsic,config and true extrinsic according to the promption               |
-|  6   | the result file will be found at directory "man" in the same directory with the cloud file         |
 
-***if the checkboard calibration results looks ugly pleasse select the "Reverse" checkbox and redo the calibration***
-
-### 5.2 Checkboard Evaluation
-CheckBoard Evaluation function can evaluate and show the project err of the checkboard corners.
-| step |  operation                                                                                         |
-| :-:  | :-----------                                                                                       |
-|  1   | make sure the clouds/config Json and cameraSrc are loaded correctly as 5.1, or just follow the checkboard calibration |
-|  2   | press "CB Evaluation" button                                                                       |
-|  3   | select a calibration result json file(either CB calibration/autocalibration/manualcalibration)     |
-|  4   | the "Reprojection Error Report" will display in the terminal.                                                                    |
-
-***if the Reprojection Error value looks very big(generally greater than 50), please select the "Reverse" checkbox and redo the evaluation***
-
-## 6. calibration config
+## 5. calibration config
 
 ***Calibration config is critial for geting a correct calibration result.***
 
-### 6.1 objects in the config json file
+### 5.1 objects in the config json file
 In this program, we integrate all the configs in a json file.
 - object "picRenderChoice": setting the parameters for how to take pictures of the cloud by the cloud camera
 - object "cloudCamera.Intrinsic": setting the intrinsic of the cloud camera,including K matrix and DistCoeffs vector
@@ -163,7 +139,7 @@ In this program, we integrate all the configs in a json file.
 
 ***The program will automatically calculate the EulerR and WorldT anytime we reading or write a json file, or using the json file for calibration. so the calibration will keep correct even if the EulerR and WorldT is wrong input manually.***
 
-### 6.2 Definitions of [picRenderChoice]
+### 5.2 Definitions of [picRenderChoice]
 the params in the picRenderChoice is to define how to take cloud pictures by the virtual camera, it's very important for calibration, please read this section carefully before starting calibration.
 
 | No. | Params | definistion | Default Value |
@@ -188,7 +164,7 @@ the params in the picRenderChoice is to define how to take cloud pictures by the
 | 18 | selfRotation | defines virtual camera rotation method | true |
 | 19 | saveornot | defines if the picture will be saved or not(only effectively in manual mode) | false |
 
-## 7. How to read the calibration report
+## 6. How to read the calibration report
 
  The calibration report is written in json format, it includes below objects:
  - trueCamera: recording the Intrinsic and Extrinsic set by the calibration config

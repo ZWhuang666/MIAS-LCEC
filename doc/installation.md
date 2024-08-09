@@ -20,11 +20,9 @@ This project consists of two different codes package, C++and Python, and require
 - [Eigen](https://eigen.tuxfamily.org/index.php) ([MPL2 license](https://www.mozilla.org/en-US/MPL/2.0/))
 - [portable-file-dialogs](https://github.com/samhocevar/portable-file-dialogs) ([WTFPL license](https://github.com/samhocevar/portable-file-dialogs/blob/main/COPYING))
 ## Python Dependencies
-- [Pytorch]
+- [Pytorch](https://pytorch.org/get-started/locally/)
 - [MobileSAM](https://github.com/ChaoningZhang/MobileSAM)
-- [timm]
-- [pyautogui]
-- [pygame]
+- timm
 
 ## Install C++ dependencies
 
@@ -33,13 +31,19 @@ This project consists of two different codes package, C++and Python, and require
 sudo apt-get install -y libglm-dev libglfw3-dev libpng-dev libjpeg-dev libeigen3-dev libboost-filesystem-dev libboost-program-options-dev
 
 # Install Iridescence for visualization
+##Option1,copy the iridescence attched with this software to your computer
+mkdir iridescence/build && cd iridescence/build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j$(nproc)
+sudo make install
+##option2, download iridescence.this method might have some problem if iridescence updated.
 git clone https://github.com/koide3/iridescence --recursive
 mkdir iridescence/build && cd iridescence/build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
 sudo make install
 
-# in some case the LCVision can't find iridescence package, please add the /usr/local/lib into the ld.so.conf using below command
+# in some case the zvision can't find iridescence package, please add the /usr/local/lib into the ld.so.conf using below command
 sudo vim /etc/ld.so.conf
 
 # make the config into effective
@@ -63,8 +67,7 @@ conda activate pytorch_env
 # make sure the cuda version keep consistent in below two commands
 # make sure the Nvida driver is installed correctly
 nvidia-smi
-conda install cudatoolkit cudnn
-conda install pytorch pytorch-cuda=11.8 -c pytorch -c nvidia
+conda install pytorch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 pytorch-cuda=11.8 -c pytorch -c nvidia
 
 # install pytorch for CPU if Nvidia display card is not available
 ## Option 1
@@ -76,38 +79,45 @@ pip install torch-2.1.2+cpu-cp310-cp310-linux_x86_64.whl
 
 # install MobileSam
 # option1:download MobileSam and run below command
+cd ~/MIAS-LCEC/bin/MobileSAM
 pip install -e.
 # option2
 pip install git+https://github.com/ChaoningZhang/MobileSAM.git
 
 # install timm/pyautogui/pygame
 pip install timm
-pip install pyautogui
-pip install pygame
-
-#if the installed pytorch has a version comflication on torchvision，you need to delete your current torchvision and install again
-
 ```
-## Build LCVision
-Download LCVision from GitHub
+
+## Build MIAS-LCEC
+Download MIAS-LCEC from GitHub
 
 ```bash
-cd ~/LCVision_ws/src/zvisionpython/src
-gedit config.json
+# clone git source
+cd ~
+git clone https://github.com/ZWhuang666/MIAS-LCEC.git
+cd ~/MIAS-LCEC/
+
+# activate your conda environment and make the configurtaion
+conda activate pytorch_env
+python config.py
 ```
 
-There will be the following contents in the config.json
-
+The above process will download MIAS-LCEC and config the environment path of the program. If correctly operated, the file ***"~/MIAS-LCEC/bin/python/config.json"*** will be like:
+```json
+{
+    "path": {
+        "ros": "/bin/python",
+        "conda": "your path to conda/envs/pytorch_env/lib/python3.10/site-packages",
+        "sam": "~/MIAS-LCEC/bin/MobileSAM",
+    },
+    "Debug": {}
+}
 ```
-...
-```
 
-Please rewrite "conda_path" and "sam_path" to your own installation location. For conda_path, e.g., you can viewe your conda environment path by
+Please make sure to do ***conda activate [your conda path]*** before tapping ***python config.py***. If the program failed to run python code, please check your conda environment path using:
 
 ```bash
 conda env list
-
 ```
 
-For sam_path, e.g., if you download sam through GitHub at "/home/username/MobileSAM", there should be "/home/username/MobileSAM". 
- 
+and write the correct path to ***"~/MIAS-LCEC/bin/python/config.json"*** manually.

@@ -15,7 +15,8 @@ MIAS Group proposed a novel LiDAR-camera extrinsic calibration framework based o
 :star: **What can MIAS-LCEC Toolbox do?** MIAS-LCEC Toolbox is a versatile calibration toolbox that supports **3D sensor data browsing**, **online, target-free LiDAR-camera extrinsic calibration** and **manual, offline calibration**. To start calibration, you only need to load the source file of your point cloud and image in the GUI surface and click a button. After calibration, you can view the rendered RGB point cloud using the calibrated extrinsic parameters to check the calibration result. 
 
 <p align="center">
-<img src='./assets/MIAS-LCEC-demo_RGBPointCloud.gif' width=800px>
+<img src='./assets/MIAS-LCEC-demo_3Dpointcloud.gif' width="80.0%">
+
 </p>
 *<sup> view rendered point cloud within the toolbox interface to check the visualization of calibration result</sup>*
 
@@ -40,7 +41,7 @@ Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))]
 In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm;  (b) The introduction of three real-world datasets; (c) The calibration example using our toolbox.
 
 <p align="center">
-<img src='./assets/MIAS-LCEC-demo_white.gif' width=800px>
+<img src='./assets/MIAS-LCEC-demo.gif' width="80.0%">
 </p>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
@@ -59,16 +60,16 @@ We have created the following three real-world datasets:
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 4. Installation
-To install MIAS-LCEC Toolbox, please refer to the python package [installation introduction](https://github.com/mias-release/MIAS-LCEC/tree/main/doc/installation.md).
+To install MIAS-LCEC Toolbox, please refer to the python package [installation introduction](./doc/installation.md).
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
-Please refer to the [user guide](https://github.com/mias-release/MIAS-LCEC/tree/main/doc/program.md) for application details of this toolbox.
+Please refer to the [user guide](./doc/program.md) for application details of this toolbox.
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 6. Contact
-Please feel free to drop me emails (Zhiwei Huang, [@outlook.com](zhiwei.huang@outlook.com)) if you have any questions.
+Please feel free to drop me emails *zhiwei.huang@outlook.com* if you have any questions.
 
 
 
