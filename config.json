@@ -1,0 +1,37 @@
+{
+    "picRenderChoice":{
+        "fourNeighbor":false,
+        "eightNeighbor":true,
+        "baseGray":0,
+        "contrast":2,
+        "lowIntensity":0.000000,
+        "zMin":-30.000000,
+        "zMax":30.000000,
+        "xMin":-40.000000,
+        "xMax":800.000000,
+        "picWidth":1200,
+        "picHeight":800,
+        "samplingStep":1,
+        "dMin":-10.000000,
+        "dMax":800.000000,
+        "color":false,
+        "OMP":true,
+        "OMPthreads":3,
+        "vectorN":1024,
+        "selfRotation":true,
+        "saveornot":false
+    },
+    "cloudCamera":{
+        "Intrinsic":{
+            "K":[[1176.670168,0.000000,605.408551],[0.000000,1176.428331,487.497136],[0.000000,0.000000,1.000000]],
+            "D":[[-0.153459],[0.341577],[0.000000],[0.000000],[-0.557916]]
+        },
+        "Extrinsic":{
+            "R":[[1.205717],[-1.227200],[1.175048]],
+            "T":[[0.124297],[-0.030655],[-0.045511]]
+        },
+        "EulerR":[90.501479,178.461775,89.064392],
+        "WorldT":[[0.043908],[0.125484],[-0.028046]],
+        "EulerType":5
+    }
+}

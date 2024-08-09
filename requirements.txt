@@ -1,0 +1,5 @@
+
+# install timm/pyautogui/pygame
+timm
+pyautogui
+pygame

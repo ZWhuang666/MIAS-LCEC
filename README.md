@@ -2,22 +2,28 @@
   <img src="assets/cover.png?raw=true" width="99.1%" />
 </p>
 
-# LCVision (Versatile LiDAR-Camera Calibration toolbox)
-Zhiwei Huang proposed a novel LiDAR-camera extrinsic calibration framework based on large vision modal and invented a cross-modal mask matching algorithm;
+# MIAS-LCEC
+MIAS Group proposed a novel LiDAR-camera extrinsic calibration framework based on large vision modal and invented a cross-modal mask matching algorithm. To benifit the robotics society, we desigend MIAS-LCEC Toolbox (a versatile visual calibration toolbox) and MIAS Datasets (three real-world datasets for the evaluation of LiDAR-camera extrinsic calibration algorithms).
 
 :pushpin: Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching, available at [arXiv](https://arxiv.org/abs/2404.18083).
 
 :grapes: Toolbox versions
-* **2024/07/1**: LCVision has been developed by Zhiwei Huang @Tongji University.
+* **2024/07/1**: MIAS-LCEC Toolbox has been developed by Zhiwei Huang @Tongji University.
 
-:star: **What can LCVision do?** LCVision is a versatile calibration toolbox, .
+:star: **What is our contribution?** We move one step forward in the field of online, target-free LCEC by unleashing the potential of SoTA LVMs. Moreover, we invent a noval cross-modal mask matching (C3M) algorithm, enabling more robust and accurate feature corresponding for LiDAR point clouds and camera images.
 
-:star: **How to Adapt from SAM to MobileSAM?** Since MobileSAM keeps exactly the same pipeline as the original SAM, we inherit pre-processing, post-processing, and all other interfaces from the original SAM. Therefore, by assuming everything is exactly the same except for a smaller image encoder, those who use the original SAM for their projects can **adapt to MobileSAM with almost zero effort**.
+:star: **What can MIAS-LCEC Toolbox do?** MIAS-LCEC Toolbox is a versatile calibration toolbox that supports **3D sensor data browsing**, **online, target-free LiDAR-camera extrinsic calibration** and **manual, offline calibration**. To start calibration, you only need to load the source file of your point cloud and image in the GUI surface and click a button. After calibration, you can view the rendered RGB point cloud using the calibrated extrinsic parameters to check the calibration result. 
+
+<p align="center">
+<img src='./assets/MIAS-LCEC-demo_RGBPointCloud.gif' width=800px>
+</p>
+*<sup> view rendered point cloud within the toolbox interface to check the visualization of calibration result</sup>*
+
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 1. Publication:
-This [paper (arxiv preprint)](https://arxiv.org/pdf/2005.08165.pdf) was accepted to RA-L and ICRA'21. In this repository, we publish our MATLAB, C++, and CUDA code. 
+This [paper (arxiv preprint)](https://arxiv.org/pdf/2005.08165.pdf) was accepted to T-IV. In this repository, we publish our toolbox software and its applicational tutorial. 
 
 Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))](https://arxiv.org/abs/2404.18083) when using our source code or datasets:
 ```
@@ -31,41 +37,34 @@ Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))]
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 2. Demo Video:
-In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm; (b) ; (c) The introduction of three real-world datasets; (d) The calibration example using our toolbox LCVision.
+In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm;  (b) The introduction of three real-world datasets; (c) The calibration example using our toolbox.
 
 <p align="center">
-<img src='./assets/MIAS-LCEC-DEMO.gif' width=500px>
+<img src='./assets/MIAS-LCEC-demo_white.gif' width=800px>
 </p>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 
 ## 3. Datasets
-Two solid-state Livox LiDARs (Livox Mid-70 and Livox Mid0360) and one MindVision camera are utilized for data acquisition. We have created the following three real-world datasets:
-**MIAS-LCEC-TF70 (target-free)**, **MIAS-LCEC-CB70 (target-based)**, **and MIAS-LCEC-TF360 (target-free)**, which are now publicly available at [xxx](http://) for researchers to evaluate the performance of LCEC approaches.
+We have created the following three real-world datasets:
+**MIAS-LCEC-TF70 (target-free)**, **MIAS-LCEC-CB70 (target-based)**, and **MIAS-LCEC-TF360 (target-free)**, which are now publicly available at [Google Drive](https://drive.google.com/open?id=1-9dsrJVGIpYYzdxljBMHtFychXX0BsOX&usp=drive_fs) and [BaiduDuYun](https://pan.baidu.com/s/1pYPzNmDKru4WhEcVQwgdUg?pwd=z2qg) for researchers to evaluate the performance of LCEC approaches. Two solid-state Livox LiDARs (Livox Mid-70 and Livox Mid-360) and one MindVision camera are utilized for data acquisition. Point clouds and images in the datasets are collected from a variety of indoor and outdoor environments, under various scenarios as well as different weather and illumination conditions. 
 
 <p align="center">
-<img src='./figs/experimental_results.png' width=600px>
+<img src='./assets/dataset_demo.png' width=900px>
 </p>
 
-*<sup>(1)–(5) columns on (a), (d) and (g) rows show the 3-D mesh models, depth images, surface normal ground truth
-and the experimental results obtained using FD-Mean and FD-Median SNEs (ours), respectively; (1)–(5) columns on (b), (e) and (h) rows show the angular error
-maps obtained by PlaneSVD/PlanePCA, VectorSVD, AreaWeighted, AngleWeighted, and FALS SNEs, respectively; (1)–(5) columns on
-(c), (f) and (i) rows show the angular error maps obtained by SRI, LINE-MOD, SNE-RoadSeg, FD-Mean and FD-Median SNEs, respectively.</sup>*
-
-Our datasets is public available at [Google Drive](https://drive.google.com/open?id=1-9dsrJVGIpYYzdxljBMHtFychXX0BsOX&usp=drive_fs) and [BaiduDuYun](https://pan.baidu.com/s/1pYPzNmDKru4WhEcVQwgdUg?pwd=z2qg)
+<!-- *<sup>...</sup>*-->
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 4. Installation
-### 4.1 LCVision GUI (C++)
-For LCVision GUI, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/doc/installation.md)
-### 4.2 LCVision C3M (Python)
-For LCVision C3M, please refer to the python package [installation introduction](https://github.com/ZWhuang666/LCVision/tree/main/LCVisionpython)
+To install MIAS-LCEC Toolbox, please refer to the python package [installation introduction](https://github.com/mias-release/MIAS-LCEC/tree/main/doc/installation.md).
+
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
-Please refer to the [user guide](https://github.com/ZWhuang666/LCVision/tree/main/doc/program.md) for application details of this toolbox.
+Please refer to the [user guide](https://github.com/mias-release/MIAS-LCEC/tree/main/doc/program.md) for application details of this toolbox.
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 6. Contact

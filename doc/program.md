@@ -7,15 +7,15 @@
 the program consist of two independent pacakge:
 | No. | Package Name  | Function                                                             |
 | :-: | :-----------: | :--------------------------------------------------------------------|
-|  1  |    LCVision    | A c++ package , which is the main UI of the project                  |
-|  2  | LCVisionpython | A python package, the main function is to receive command and data from LCVision package and complete the segmentation function and match function, and then send the matched points pair back to LCVision package for further PNP. |
+|  1  |    Zvision    | A c++ package , which is the main UI of the project                  |
+|  2  | Zvisionpython | A python package, the main function is to receive command and data from Zvision package and complete the segmentation function and match function, and then send the matched points pair back to Zvision package for further PNP. |
 
-***the LCVision package and LCVisionpython package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both LCVision package and LCVisionpython package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run LCVision and LCVisionpython on two or more computers at the same time, please disconnect the computers with the network***
+***the Zvision package and Zvisionpython package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both Zvision package and Zvisionpython package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run Zvision and Zvisionpython on two or more computers at the same time, please disconnect the computers with the network***
 
-To start the toolbox, you only need to run the shell script LCVision.sh
+To start the toolbox, you only need to run the shell script Zvision.sh
 ```bash
-cd ~/LCVision
-sh LCVision.sh
+cd ~/Zvision
+sh Zvision.sh
 ```
 
 ## 2. UI introduction

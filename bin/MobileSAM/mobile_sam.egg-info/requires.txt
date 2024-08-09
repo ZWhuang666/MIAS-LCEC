@@ -1,0 +1,13 @@
+
+[all]
+matplotlib
+onnx
+onnxruntime
+opencv-python
+pycocotools
+
+[dev]
+black
+flake8
+isort
+mypy
