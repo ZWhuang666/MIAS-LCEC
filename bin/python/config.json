@@ -3,7 +3,6 @@
         "ros": "/bin/python",
         "conda": "/home/serilk/miniconda3/envs/pytorch_env/lib/python3.10/site-packages",
         "sam": "/home/serilk/ZLcMatch/MobileSAM",
-        "dpa": "/home/serilk/ZLcMatch/Zvision2/bin/DPA2"
     },
     "Debug": {}
 }

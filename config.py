@@ -18,7 +18,7 @@ if conda_sitepackages_path != []:
             fileConfig = json.load(file)
             fileConfig["path"]["ros"] = "/bin/python"
             fileConfig["path"]["conda"] = conda_sitepackages_path[0]
-            fileConfig["path"]["dpa"] = fileDirPath + "/bin/DPA2"
+            fileConfig["path"]["sam"] = fileDirPath + "/bin/MobileSAM"
             print("Config file is",fileConfig)
             file.close()
             with open(confileJsonPath, 'w') as file:

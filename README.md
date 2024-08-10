@@ -1,32 +1,32 @@
-<p float="center">
-  <img src="assets/cover.png?raw=true" width="99.1%" />
+# MIAS-LCEC
+<p align="center">
+  <img src="assets/cover.png?raw=true" width="95.1%" />
 </p>
 
-# MIAS-LCEC
-MIAS Group proposed a novel LiDAR-camera extrinsic calibration framework based on large vision modal and invented a cross-modal mask matching algorithm. To benifit the robotics society, we desigend MIAS-LCEC Toolbox (a versatile visual calibration toolbox) and MIAS Datasets (three real-world datasets for the evaluation of LiDAR-camera extrinsic calibration algorithms).
+[MIAS Group](https://mias.group/) has developed a novel LiDAR-camera extrinsic calibration framework known as MIAS-LCEC and introduced a cross-modal mask matching (C3M) algorithm. To benefit the robotic community, we designed the MIAS-LCEC Toolbox, a versatile calibration toolbox with an interactive visualization interface, along with the MIAS-LCEC Datasets, which include three real-world datasets for evaluating LiDAR-camera extrinsic calibration algorithms.
 
-:pushpin: Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching, available at [arXiv](https://arxiv.org/abs/2404.18083).
+:pushpin: *Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching*, available at [arXiv](https://arxiv.org/abs/2404.18083).
 
 :grapes: Toolbox versions
 * **2024/07/1**: MIAS-LCEC Toolbox has been developed by Zhiwei Huang @Tongji University.
 
-:star: **What is our contribution?** We move one step forward in the field of online, target-free LCEC by unleashing the potential of SoTA LVMs. Moreover, we invent a noval cross-modal mask matching (C3M) algorithm, enabling more robust and accurate feature corresponding for LiDAR point clouds and camera images.
+:star: **What is our contribution?** We move one step forward in the field of online, target-free LCEC by unleashing the potential of SoTA large vision models (LVMs). Additionally, we introduce a novel cross-modal mask matching (C3M) algorithm, which enhances the robustness and accuracy of feature correspondence between LiDAR point clouds and camera images.
 
-:star: **What can MIAS-LCEC Toolbox do?** MIAS-LCEC Toolbox is a versatile calibration toolbox that supports **3D sensor data browsing**, **online, target-free LiDAR-camera extrinsic calibration** and **manual, offline calibration**. To start calibration, you only need to load the source file of your point cloud and image in the GUI surface and click a button. After calibration, you can view the rendered RGB point cloud using the calibrated extrinsic parameters to check the calibration result. 
+:star: **What can MIAS-LCEC Toolbox do?** MIAS-LCEC Toolbox is a versatile calibration toolbox that supports **3D sensor data browsing**, **online, target-free LiDAR-camera extrinsic calibration** and **manual, offline calibration**. To begin calibration, simply load your point cloud and image source files into the GUI and click a button. After calibration, you can view the rendered RGB point cloud using the calibrated extrinsic parameters to verify the results.
 
 <p align="center">
 <img src='./assets/MIAS-LCEC-demo_3Dpointcloud.gif' width="80.0%">
-
 </p>
-*<sup> view rendered point cloud within the toolbox interface to check the visualization of calibration result</sup>*
+
+<center><sup> Viewing rendered point cloud within the toolbox interface to check the visualization of calibration result </sup></center>
 
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 1. Publication:
-This [paper (arxiv preprint)](https://arxiv.org/pdf/2005.08165.pdf) was accepted to T-IV. In this repository, we publish our toolbox software and its applicational tutorial. 
+This [paper](https://arxiv.org/pdf/2005.08165.pdf) was accepted to IEEE Trans. on Intelligent Vehicles (T-IV). In this repository, we publish our toolbox software and its applicational tutorial. Please cite
 
-Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))](https://arxiv.org/abs/2404.18083) when using our source code or datasets:
+
 ```
 @article{huang2024online,
   title={Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching},
@@ -35,10 +35,15 @@ Please cite our [paper (accepted to IEEE Trans. on Intelligent Vehicles (T-IV))]
   year={2024}
 }
 ```
+
+when using our toolbox or datasets.
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 2. Demo Video:
-In this [video](https://www.youtube.com/), we demonstrated: (a) The proposed algorithm;  (b) The introduction of three real-world datasets; (c) The calibration example using our toolbox.
+In this video ([Bilibili Link](https://www.bilibili.com/) | [YouTube Link](https://www.youtube.com/)), we demonstrated: 
+* The proposed algorithm;  
+* The introduction of three real-world datasets; 
+* The calibration example using MIAS-LCEC Toolbox.
 
 <p align="center">
 <img src='./assets/MIAS-LCEC-demo.gif' width="80.0%">
@@ -60,16 +65,16 @@ We have created the following three real-world datasets:
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 4. Installation
-To install MIAS-LCEC Toolbox, please refer to the python package [installation introduction](./doc/installation.md).
+To install MIAS-LCEC Toolbox, please refer to the [Installation Introduction](./doc/installation.md).
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 5. Getting Started
-Please refer to the [user guide](./doc/program.md) for application details of this toolbox.
+Please refer to the [User Guide](./doc/program.md) for application details of MIAS-LCEC Toolbox.
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 6. Contact
-Please feel free to drop me emails *zhiwei.huang@outlook.com* if you have any questions.
+Please feel free to drop me emails [*zhiwei.huang@outlook.com*] if you have any questions.
 
 
 

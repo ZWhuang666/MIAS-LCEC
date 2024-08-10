@@ -7,10 +7,10 @@
 The program consist of two independent pacakge:
 | No. | Package Name  | Function                                                             |
 | :-: | :-----------: | :--------------------------------------------------------------------|
-|  1  |    zvision    | A c++ package , which is the main UI of the project                  |
-|  2  |     c3m       | A python package, the main function is to receive command and data from iviewer package and complete the segmentation function and match function, and then send the matched points pair back to iviewer package for further PNP. |
+|  1  |    zvision    | A C++ package , which is the main UI of the project                  |
+|  2  |     c3m       | A Python package, the main function is to receive command and data from iviewer package and complete the segmentation function and match function, and then send the matched points pair back to iviewer package for further PNP. |
 
-***the zvsion package and c3m package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both zvision package and c3m package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. if you need to run zvision and c3m on two or more computers at the same time, please disconnect the computers with the network***
+***The zvsion package and c3m package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both zvision package and c3m package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. If you need to run zvision and c3m on two or more computers at the same time, please disconnect the computers with the network.***
 
 To start MIAS-LCEC Toolbox, you only need to run:
 ```bash
@@ -18,14 +18,16 @@ cd ~/MIAS-LCEC/
 sh mias_lcec.sh
 ```
 
+![]()
+
 ## 2. UI introduction
 
 ### 2.1 control panel
 
-this panel includes checkboxs,inputbox and buttons for general cloud and picture control.
+This panel includes checkboxs, inputbox and buttons for general cloud and picture control.
 |    Controls                           | Function                                                          |
 | :-------                              | :---------------------------------------------------------------- |
-| render Mode checkboxes and inputboxes | for choose the cloud rendering mode and set the rendering params. |
+| render Mode checkboxes and inputboxes | choose the cloud rendering mode and set the rendering params. |
 | load CloudPoints Button               | load a cloud file and display. then use left/right/mid/mid press/ of the mouse to rotate and zoom the cloud |
 | Rosbag2 Read Button                   | read the pcd and image in a rosbag2 file, if the checkbox Folder is selected, it can handle all the bag files in a folder, if the checkbox color is selected, all image files will be in RGB mode. |
 | take picture Button                   | take a cloud picture by the cloud camera and show it in the cloud image window. |
@@ -34,6 +36,10 @@ this panel includes checkboxs,inputbox and buttons for general cloud and picture
 | SaveJson Button                       | save the intrinsic,extrinsic of the cloud camera, and the  pic rendering conditions to a json file. |
 | Remove All Button                     | remove all loaded pictures and clouds. |
 
+<p align="center">
+  <img src="../assets/control_panel.jpg?raw=true" />
+</p>
+
 ### 2.2 image matching panel
 
 |    Controls                           | Function                                                          |
@@ -41,7 +47,10 @@ this panel includes checkboxs,inputbox and buttons for general cloud and picture
 | load picture & render controls        | load a picture and render the picture by cloud or render the cloud by the picture |
 | autocalibration controls              | automatic calibration and generate calibration report |
 | manual calibration controls           | picking points from cloud and image, and then complete the manual calibration |
-| checkboard calibration controls       | an offline checkboard calibration method |
+
+<p align="center">
+  <img src="../assets/image_match_panel.jpg?raw=true" />
+</p>
 
 ### 2.3 cloud camera panel
 |    Controls                           | Function                                                          |
@@ -51,35 +60,60 @@ this panel includes checkboxs,inputbox and buttons for general cloud and picture
 | points filter controls                | adjust the filter params for the cloud camera to filt the points      |
 | speedup conditions controls           | adjust params for speedup the cloudcamera projection process          |
 
+<p align="center">
+  <img src="../assets/cloud_camera_panel.jpg?raw=true" />
+</p>
+
 ### 2.4 cloud camera parameters
 
-the inputbox in the panel is to show the intrinsic,distcoeffs, extrinsic of the cloud camera
+The inputbox in the panel is to show the intrinsic,distcoeffs, extrinsic of the cloud camera.
 
-## 3. Automatic Calibration
-### 3.1 Single Calibration
+![]()
 
-| step |  operation                                                                                 |
-| :-:  | :-----------                                                                               |
-|  1   | deselect checkbox "batch" and checkbox "jsonbatch"                                         |
-|  2   | click Button "calibration"                                                                 |
-|  3   | select a cloud file according to the promption                                             |
-|  4   | select a image file according to the promption                                             |
-|  5   | select a json file of intrinsic,config and extrinsic according to the promption            |
-|  6   | the result file will be found at directory "cal" in the same directory with the cloud file |
+## 3. Browse LiDAR Point Clouds and Camera Images
 
-### 3.2 Batch Calibration
+In MIAS-LCEC Toolbox, it is convenient to browse point clouds and camera images. 
 
-when you have a group of clouds and images with same intrinsic and extrinsic, batch calibration function would be a better choice.
-#### 3.2.1 File Naming Rules
-to ensure the cloud and it's matching image be recognized correclty, file name shall comply with below rules:
-- Cloud file and it's matching image file shall be put in the same folder.
+* ***Load and browse point cloud***:  Click button [load CloudPoints] in [control panel](###-2.1-control-panel), you can easily load pcd/ply files and browse them in the toolbox interface. It allows 3D perspective transformations through simple mouse operations, enabling the observation of point clouds from various view points.
+
+<p align="center">
+<img src='../assets/MIAS-LCEC-demo-BrowsePointCloud.gif' width = 80%>
+</p>
+
+
+* ***Load and browse images***:  Click button [LoadCameraSrc] in [image matching panel](###-2.2-image-matching-panel), you can read images (bmp/png/jpg) in the internal window [cloud image window]. You can also drag the internal window in the interface to view images wherever you want. The window can be adjusted to different sizes.
+
+<p align="center">
+<img src='../assets/MIAS-LCEC-demo-BrowseImage.gif' width = 80%>
+</p>
+
+![]()
+
+## 4. Automatic Calibration
+### 4.1 Single Calibration
+
+| Step |  Operation                                                                                     |
+| :-:  | :-----------                                                                                   |
+|  1   | deselect checkbox "**batch**" and checkbox "**jsonbatch**"                                     |
+|  2   | click Button "**calibration**"                                                                 |
+|  3   | select a cloud file according to the promption                                                 |
+|  4   | select a image file according to the promption                                                 |
+|  5   | select a json file of intrinsic,config and extrinsic according to the promption                |
+|  6   | the result file will be found at directory "**cal**" in the same directory with the cloud file |
+
+### 4.2 Batch Calibration
+
+When you have a group of clouds and images with same intrinsic and extrinsic, batch calibration function would be a better choice.
+#### 4.2.1 File Naming Rules
+To ensure the cloud and its matching image be recognized correclty, file name shall comply with below rules:
+- cloud file and its matching image file shall be put in the same folder.
 - the essential name of the cloud and the image shall be the same.
 - pcd name shall be : essential name+"_merge.pcd"
 - image name shall be : essential name+"_1.png"
 - example: test_merge.pcd, test_1.png, will be regarded as a pair and calibrate.
 
-#### 3.2.2 Operation Steps
-| step |  operation                                                                                         |
+#### 4.2.2 Operation Steps
+| Step |  Operation                                                                                         |
 | :-:  | :-----------                                                                                       |
 |  1   | select checkbox "batch" and deselect checkbox "jsonbatch"                                          |
 |  2   | click Button "calibration"                                                                         |
@@ -88,58 +122,75 @@ to ensure the cloud and it's matching image be recognized correclty, file name s
 |  6   | the result file will be found at directory "intelibatch" in the same directory with the cloud file |
 
 
-### 3.3 JsonBatch Calibration
-when we have a lot of clouds and images with different intrinsic and extrinsic, we can classify the files by intrinsic and extrinsic, put the files with the same intrinsic and extrinsic in one folder.
-and then , we can edit a batchtesting json file, to tell the program to batch calibrate all  the files automatically.
+### 4.3 JsonBatch Calibration
+When dealing with multiple point clouds and images with varying intrinsic and extrinsic parameters, you can organize the files by grouping those with the same intrinsic and extrinsic parameters into separate folders. Then, by editing a batch testing JSON file, you can instruct the program to automatically batch calibrate all the files.
 
-for batchtesting json file , please read the example file "batchtestingexample.json"
+For batchtesting json file , please read the example file "[batchtestingexample.json](./batchtestingexample.json)":
+```json
+{ 
+    "targetFolder":"DatasetsReleaseTest",
+    "batchType":1,
+    "itrCounts":6,
+    "testFileFolder":"/media/D/zvoutput/DatasetsRelease240711/TF70Data240711",
+    "trueJsonFolder":"/media/D/zvoutput/DatasetsRelease240711/TF70TrueJson240711",
+    "RemarksA":"this is the example Json file of bath Test for TF70 Dataset",
+    "RemarksB":""
+}
+```
 
-#### 3.3.1 Operation Steps
-| step |  operation                                                                                         |
+#### 4.3.1 Operation Steps
+| Step |  Operation                                                                                        |
 | :-:  | :-----------                                                                                       |
-|  1   | deselect checkbox "batch" and select checkbox "jsonbatch"                                          |
-|  2   | click Button "calibration"                                                                         |
+|  1   | deselect checkbox "**batch**" and select checkbox "**jsonbatch**"                                          |
+|  2   | click Button "**calibration**"                                                                         |
 |  3   | select the batch testing json file according to the promption                                      |
 |  4   | the result file will be found at directory you assigned in the batch testing json file             |
 
-## 4. Manual Calibration
-### 4.1 Manual Calibration
-| step |  operation                                                                                         |
-| :-:  | :-----------                                                                                       |
-|  1   | press "load cloudPoints" button in "Control Panel" to load a cloud                                                    |
-|  2   | press "Read Json" Button in"Control Panel" to load a json file including intrinsic/distcoeffs/picRenderChoice        |
-|  3   | Press "load CameraSrc" Button to load a image, make sure the "undistort" checkbox is selected            |
-|  4   | Press "Picking" Button, and press "set pick" button in cloud image window to set the "undistort picture" as picking image, then using right-click mouse to pick points in cloud, and using left-click 0.2S to pick points in picture. |
-|  5   | Press "Manual Calibration" , then a evaluation table will appear in the cloud image window, and a testreport will be generated in the "man" folder at the same location of the cloud file |
-|  6   | then you can use "render camera by cloud" and "render cloud by camera " to further observe the fusion effect |
+![]()
 
-### 4.2 Rendering Function
+## 5. Manual Calibration
+### 5.1 Manual Calibration
+| Step |  Operation                                                                                         |
+| :-:  | :-----------                                                                                       |
+|  1   | press "**load cloudPoints**" button in "**Control Panel**" to load a cloud                                                    |
+|  2   | press "**Read Json**" Button in"**Control Panel**" to load a json file including intrinsic/distcoeffs/picRenderChoice        |
+|  3   | Press "**load CameraSrc**" Button to load a image, make sure the "undistort" checkbox is selected            |
+|  4   | Press "**Picking**" Button, and press "**set pick**" button in cloud image window to set the "undistort picture" as picking image, then using right-click mouse to pick points in cloud, and using left-click 0.2S to pick points in picture. |
+|  5   | Press "**Manual Calibration**" , then a evaluation table will appear in the cloud image window, and a testreport will be generated in the "**man**" folder at the same location of the cloud file |
+|  6   | then you can use "**Render Camera by Cloud**" and "**Render Cloud by Camera**" to further observe the fusion effect |
+
+### 5.2 Rendering Function
 Rendering function is designed to observe the fusion effect of cloud and camera images.it can be used for further adjust the manual calibration results and get a better extrinsic calibration.
-| step |  operation                                                                                         |
+| Step |  Operation                                                                                         |
 | :-:  | :-----------                                                                                       |
-|  1   | press "load cloudPoints" button to load a cloud                                                    |
-|  2   | press "Read Json" Button to load a json file including intrinsic/distcoeffs/picRenderChoice        |
-|  3   | Press "load CameraSrc" Button to load a image, make sure the "undistort" checkbox is selected            |
-|  4   | Press "Render Camera by Cloud ", a rendered picture will appeared in the cloud image window        |
-|  5   | Press "Render Cloud by Camera ", the cloud will be rendered by the image                           |
+|  1   | press "**load cloudPoints**" button to load a cloud                                                    |
+|  2   | press "**Read Json**" Button to load a json file including intrinsic/distcoeffs/picRenderChoice        |
+|  3   | Press "**load CameraSrc**" Button to load a image, make sure the "**undistort**" checkbox is selected            |
+|  4   | Press "**Render Camera by Cloud**", a rendered picture will appeared in the cloud image window        |
+|  5   | Press "**Render Cloud by Camera**", the cloud will be rendered by the image                           |
 
+<p align="center">
+<img src='../assets/MIAS-LCEC-demo-Render.gif' width = 80%>
+</p>
 
-## 5. calibration config
+![]()
+
+## 6. Calibration Config
 
 ***Calibration config is critial for geting a correct calibration result.***
 
-### 5.1 objects in the config json file
+### 6.1 Objects in the Config Json File
 In this program, we integrate all the configs in a json file.
-- object "picRenderChoice": setting the parameters for how to take pictures of the cloud by the cloud camera
-- object "cloudCamera.Intrinsic": setting the intrinsic of the cloud camera,including K matrix and DistCoeffs vector
-- object "cloudCamera.Extrinsic": setting true extrinsic (R and T vec) of the real camera, the extrinsic doesn't affect the calibration result, it is only used to evalute the calibration result.
-- object "cloudCamera.EulerR": it is calculated by the program throught the R and T vec.
-- object "cloudCamera.WorldT": it is calculated by the program throught the R and T vec.
-- object "EulerType": default value is 5, means "ZYX".
+- object "**picRenderChoice**": setting the parameters for how to take pictures of the cloud by the cloud camera
+- object "**cloudCamera.Intrinsic**": setting the intrinsic of the cloud camera,including K matrix and DistCoeffs vector
+- object "**cloudCamera.Extrinsic**": setting true extrinsic (R and T vec) of the real camera, the extrinsic parameters do not affect the calibration result, they are only used to evalute the calibration result.
+- object "**cloudCamera.EulerR"**: the corresponding Euler angle of R, which is calculated by the program throught the R and T vec.
+- object "**cloudCamera.WorldT**" it is used to depict the point translation, and is calculated by the program using -(R*)^(-1)t*.
+- object "**EulerType**": default value is 5, means "ZYX".
 
 ***The program will automatically calculate the EulerR and WorldT anytime we reading or write a json file, or using the json file for calibration. so the calibration will keep correct even if the EulerR and WorldT is wrong input manually.***
 
-### 5.2 Definitions of [picRenderChoice]
+### 6.2 Definitions of [picRenderChoice]
 the params in the picRenderChoice is to define how to take cloud pictures by the virtual camera, it's very important for calibration, please read this section carefully before starting calibration.
 
 | No. | Params | definistion | Default Value |
@@ -164,18 +215,20 @@ the params in the picRenderChoice is to define how to take cloud pictures by the
 | 18 | selfRotation | defines virtual camera rotation method | true |
 | 19 | saveornot | defines if the picture will be saved or not(only effectively in manual mode) | false |
 
-## 6. How to read the calibration report
+![]()
+
+## 7. How to read the calibration report
 
  The calibration report is written in json format, it includes below objects:
- - trueCamera: recording the Intrinsic and Extrinsic set by the calibration config
- - calCamera: recording the calibration output Intrinsice and Extrinsic
- - Evaluation: recording all the evaluation indicators.
- - cloudCamera: recording the Intrinsic and Extrinsic of the cloud camera used to take cloud pictures in the calibration
- - matePRC: recording the setting of picRenderChoice used in the calibration, it's the same with the input config before calibration.
+ - **trueCamera**: recording the Intrinsic and Extrinsic set by the calibration config
+ - **calCamera**: recording the calibration output Intrinsice and Extrinsic
+ - **Evaluation**: recording all the evaluation indicators.
+ - **cloudCamera**: recording the Intrinsic and Extrinsic of the cloud camera used to take cloud pictures in the calibration
+ - **matePRC**: recording the setting of picRenderChoice used in the calibration, it's the same with the input config before calibration.
 
  main evaluation indicators
- - Er: the Errors of EulerR of the calCamera against trueCamera
- - Et: the Errors of WorldT of the calCamera against trueCamera
+ - **Er**: the Errors of EulerR of the calCamera against trueCamera
+ - **Et**: the Errors of WorldT of the calCamera against trueCamera
 
 
 
