@@ -1,8 +1,8 @@
 # Installation
 
-This project consists of two different codes package, C++and Python, and requires the installation of dependencies for both C++ and Python
+This project consists of two different codes package, C++and Python, and requires the installation of dependencies for both C++ and Python.
 ## Suggestion Operation System
-- ubuntu 22.04
+- Ubuntu 22.04
 - Ros2 humble
 
 ## C++ Dependencies
@@ -88,8 +88,8 @@ pip install git+https://github.com/ChaoningZhang/MobileSAM.git
 pip install timm
 ```
 
-## Build MIAS-LCEC
-Download MIAS-LCEC from GitHub
+## Download and configure MIAS-LCEC
+Download MIAS-LCEC from GitHub and configure the environment path of the program.
 
 ```bash
 # clone git source
@@ -102,7 +102,7 @@ conda activate pytorch_env
 python config.py
 ```
 
-The above process will download MIAS-LCEC and config the environment path of the program. If correctly operated, the file ***"~/MIAS-LCEC/bin/python/config.json"*** will be like:
+If correctly operated, the file ***"~/MIAS-LCEC/bin/python/config.json"*** will be like:
 ```json
 {
     "path": {

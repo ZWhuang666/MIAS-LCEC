@@ -1,0 +1,10 @@
+imgui.ini
+
+.vscode/*
+build/*
+dist/*
+site/*
+pyridescence*/*
+src/example/ext_examples.cpp
+
+*.swp

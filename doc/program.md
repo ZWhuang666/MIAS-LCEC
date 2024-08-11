@@ -1,14 +1,14 @@
-# Program details
+# Program Details
 
 ![]()
 
 ## 1. Start MIAS-LCEC Toolbox
 
-The program consist of two independent pacakge:
+The program consists of two independent pacakges:
 | No. | Package Name  | Function                                                             |
 | :-: | :-----------: | :--------------------------------------------------------------------|
 |  1  |    zvision    | A C++ package , which is the main UI of the project                  |
-|  2  |     c3m       | A Python package, the main function is to receive command and data from iviewer package and complete the segmentation function and match function, and then send the matched points pair back to iviewer package for further PNP. |
+|  2  |     c3m       | A Python package, the main function is to receive command and data from zvision package and complete the segmentation function and cross-modal mask matching function, and then send the matched points pair back to zvision package for further PNP solution. |
 
 ***The zvsion package and c3m package communicate with each other through ros2 topic publishing and subscribing mechanism,there will be some problem if you run both zvision package and c3m package in two computers in a local network since there will be two pubulishing node and subscribe node with the same name in the network. If you need to run zvision and c3m on two or more computers at the same time, please disconnect the computers with the network.***
 
@@ -20,7 +20,7 @@ sh mias_lcec.sh
 
 ![]()
 
-## 2. UI introduction
+## 2. UI Introduction
 
 ### 2.1 control panel
 
@@ -32,8 +32,8 @@ This panel includes checkboxs, inputbox and buttons for general cloud and pictur
 | Rosbag2 Read Button                   | read the pcd and image in a rosbag2 file, if the checkbox Folder is selected, it can handle all the bag files in a folder, if the checkbox color is selected, all image files will be in RGB mode. |
 | take picture Button                   | take a cloud picture by the cloud camera and show it in the cloud image window. |
 | load image Button                     | load an image from a file and show it in the cloud image window |
-| ReadJson Button                       | read a json file including pics rendering condition and intrinsic ,extrinsic, and then set the "cloud camera window" and set the intrinsic /extrinsic of the cloud camera. |
-| SaveJson Button                       | save the intrinsic,extrinsic of the cloud camera, and the  pic rendering conditions to a json file. |
+| ReadJson Button                       | read a json file including pics rendering condition and intrinsic/extrinsic parameters, and then set the "cloud camera window" and set the intrinsic/extrinsic parameters of the cloud camera. |
+| SaveJson Button                       | save the intrinsic/extrinsic parameters of the cloud camera, and the pic rendering conditions to a json file. |
 | Remove All Button                     | remove all loaded pictures and clouds. |
 
 <p align="center">
@@ -66,7 +66,7 @@ This panel includes checkboxs, inputbox and buttons for general cloud and pictur
 
 ### 2.4 cloud camera parameters
 
-The inputbox in the panel is to show the intrinsic,distcoeffs, extrinsic of the cloud camera.
+The inputbox in the panel is to show the distcoeffs, intrinsic parameters and extrinsic parameters of the cloud camera.
 
 ![]()
 
@@ -103,7 +103,7 @@ In MIAS-LCEC Toolbox, it is convenient to browse point clouds and camera images.
 
 ### 4.2 Batch Calibration
 
-When you have a group of clouds and images with same intrinsic and extrinsic, batch calibration function would be a better choice.
+When you have a group of clouds and images with same intrinsic and extrinsic parameters, batch calibration function would be a better choice.
 #### 4.2.1 File Naming Rules
 To ensure the cloud and its matching image be recognized correclty, file name shall comply with below rules:
 - cloud file and its matching image file shall be put in the same folder.
@@ -175,7 +175,7 @@ Rendering function is designed to observe the fusion effect of cloud and camera 
 
 ![]()
 
-## 6. Calibration Config
+## 6. Calibration Configuration
 
 ***Calibration config is critial for geting a correct calibration result.***
 
@@ -217,7 +217,7 @@ the params in the picRenderChoice is to define how to take cloud pictures by the
 
 ![]()
 
-## 7. How to read the calibration report
+## 7. How to Read the Calibration Report
 
  The calibration report is written in json format, it includes below objects:
  - **trueCamera**: recording the Intrinsic and Extrinsic set by the calibration config
