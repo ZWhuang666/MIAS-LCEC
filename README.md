@@ -3,7 +3,7 @@
   <img src="assets/cover.jpg?raw=true" width="95.1%" />
 </p>
 
-MIAS-LCEC is a novel online, target-free LiDAR-camera extrinsic calibration framework developed by [MIAS Group](https://mias.group/). Extensive experiments conducted on real-world datasets demonstrate the robustness of our approach and its superior performance compared to SoTA methods, particularly for the solid-state LiDARs with super-wide fields of view. To benefit the robotics community, we have published MIAS-LCEC Toolbox, a versatile calibration toolbox with an interactive visualization interface, along with the MIAS-LCEC Datasets, which include three real-world datasets for evaluating LiDAR-camera extrinsic calibration algorithms.
+MIAS-LCEC is a novel online, target-free LiDAR-camera extrinsic calibration framework developed by Zhiwei Huang with the [MIAS Group](https://mias.group/). Extensive experiments conducted on real-world datasets demonstrate the robustness of our approach and its superior performance compared to SoTA methods, particularly for the solid-state LiDARs with super-wide fields of view. To benefit the robotics community, we have published MIAS-LCEC Toolbox, a versatile calibration toolbox with an interactive visualization interface, along with the MIAS-LCEC Datasets, which include three real-world datasets for evaluating LiDAR-camera extrinsic calibration algorithms.
 
 📌: *Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching*, available at [arXiv](https://arxiv.org/abs/2404.18083).
 
@@ -25,18 +25,16 @@ MIAS-LCEC is a novel online, target-free LiDAR-camera extrinsic calibration fram
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 1. Publication:
-This [paper](https://arxiv.org/pdf/2005.08165.pdf) was accepted to IEEE Trans. on Intelligent Vehicles (T-IV). In this repository, we publish our toolbox software and its applicational tutorial. Please cite
+This [paper](https://arxiv.org/pdf/2005.08165.pdf) was accepted to IEEE Trans. on Intelligent Vehicles (T-IV). In this repository, we publish our toolbox software and its applicational tutorial. Please cite our paper when using our toolbox or datasets. 📣 Thank you!
 
 ```
 @article{huang2024online,
   title={Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching},
   author={Huang, Zhiwei and Zhang, Yikang and Chen, Qijun and Fan, Rui},
-  journal={arXiv preprint arXiv:2404.18083},
+  journal={IEEE Transactions on Intelligent Vehicles},
   year={2024}
 }
 ```
-
-when using our toolbox or datasets. 📣 Thank you!
 
 ![]()
 

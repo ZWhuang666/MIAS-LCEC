@@ -31,7 +31,7 @@ This project consists of two different codes package, C++and Python, and require
 sudo apt-get install -y libglm-dev libglfw3-dev libpng-dev libjpeg-dev libeigen3-dev libboost-filesystem-dev libboost-program-options-dev
 
 # Install Iridescence for visualization
-##Option1,copy the iridescence attched with this software to your computer
+##Option1, copy the iridescence attached with this software (under the path "~/MIAS-LCEC/bin/iridescence") to your computer.
 mkdir iridescence/build && cd iridescence/build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j$(nproc)
