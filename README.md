@@ -25,7 +25,7 @@ MIAS-LCEC is a novel online, target-free LiDAR-camera extrinsic calibration fram
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
 
 ## 1. Publication:
-This [paper](https://arxiv.org/pdf/2005.08165.pdf) was accepted to IEEE Trans. on Intelligent Vehicles (T-IV). In this repository, we publish our toolbox software and its applicational tutorial. Please cite our paper when using our toolbox or datasets. 📣 Thank you!
+This [paper](https://arxiv.org/pdf/2404.18083.pdf) was accepted to IEEE Trans. on Intelligent Vehicles (T-IV). In this repository, we publish our toolbox software and its applicational tutorial. Please cite our paper when using our toolbox or datasets. 📣 Thank you!
 
 ```
 @article{huang2024online,
@@ -39,7 +39,7 @@ This [paper](https://arxiv.org/pdf/2005.08165.pdf) was accepted to IEEE Trans. o
 ![]()
 
 ## 2. Demo Video:
-In this video ([Bilibili Link](https://www.bilibili.com/) | [YouTube Link](https://www.youtube.com/)), we demonstrate: 
+In this video ([Bilibili Link](https://www.bilibili.com/video/BV1s6WKeVEpV/?vd_source=cf93904b8bc8a635be9d176e12917b6d) | [YouTube Link](https://www.youtube.com/watch?v=Pe-cuow1e1Q)), we demonstrate: 
 * Our proposed calibration framework MIAS-LCEC 
 * Introduction of three real-world datasets 
 * Calibration examples using MIAS-LCEC Toolbox
