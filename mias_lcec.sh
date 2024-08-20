@@ -1,5 +1,5 @@
 #!/bin/bash
-# Run script for Zvision LiDAR-camera calibration toolbox
+# Run script for MIAS-LCEC LiDAR-camera calibration toolbox
 # obtain the script path
 SCRIPT_PATH=$(realpath "$0")
 

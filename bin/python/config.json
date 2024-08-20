@@ -1,8 +1,8 @@
 {
     "path": {
         "ros": "/bin/python",
-        "conda": "/home/serilk/miniconda3/envs/pytorch_env/lib/python3.10/site-packages",
-        "sam": "/home/serilk/ZLcMatch/ZvisionPreRelease/bin/MobileSAM"
+        "conda": "/home/username/miniconda3/envs/pytorch_env/lib/python3.10/site-packages",
+        "sam": "/home/username/MIAS-LCEC/BIN/MIAS-LCEC/bin/MobileSAM"
     },
     "Debug": {}
 }

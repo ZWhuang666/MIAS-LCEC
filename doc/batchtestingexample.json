@@ -2,8 +2,8 @@
     "targetFolder":"DatasetsReleaseTest",
     "batchType":1,
     "itrCounts":6,
-    "testFileFolder":"/media/D/zvoutput/DatasetsRelease240711/TF70Data240711",
-    "trueJsonFolder":"/media/D/zvoutput/DatasetsRelease240711/TF70TrueJson240711",
+    "testFileFolder":"/media/D/zvoutput/DatasetsRelease/TF70Data",
+    "trueJsonFolder":"/media/D/zvoutput/DatasetsRelease/TF70TrueJson",
     "RemarksA":"this is the example Json file of bath Test for TF70 Dataset",
     "RemarksB":""
 }
