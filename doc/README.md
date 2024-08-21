@@ -5,8 +5,6 @@ MIAS-LCEC is a novel online, target-free LiDAR-camera extrinsic calibration fram
 
 📌: *Online, Target-Free LiDAR-Camera Extrinsic Calibration via Cross-Modal Mask Matching*, available at [arXiv](https://arxiv.org/abs/2404.18083).
 
-🍇: Toolbox versions
-* **2024/07/1**: MIAS-LCEC Toolbox has been developed by Zhiwei Huang @Tongji University.
 
 ⭐: **What is our contribution?** We move one step forward in the field of online, target-free LCEC by unleashing the potential of SoTA large vision models (LVMs). The cornerstone of our framework is cross-modal mask matching (C3M) algorithm, which enhances the robustness and accuracy of feature correspondence between LiDAR point clouds and camera images. Our method dramatically outperforms other calibration approaches in challenging conditions, particularly under poor illumination and adverse weather, or when few geometric features are detectable.
 
