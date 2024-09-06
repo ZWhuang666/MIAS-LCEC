@@ -1,3 +1,7 @@
 *.md linguist-langua*.md linguist-language=C++
 *.yml linguist-language=C++
 *.so linguist-language=C++
+*.pdf linguist-language=C++
+*.png linguist-language=C++
+*.sh linguist-language=C++
+
