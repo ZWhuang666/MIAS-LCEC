@@ -1,4 +1,7 @@
 *.png inguist-language=C++
+*.yml inguist-language=C++
+*.xml inguist-language=C++
+*.html inguist-language=C++
 *.jpg inguist-language=C++
 *.md inguist-language=C++
 *.txt inguist-language=C++
