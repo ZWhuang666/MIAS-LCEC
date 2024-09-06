@@ -1,3 +1,7 @@
+*.png inguist-language=C++
+*.jpg inguist-language=C++
+*.md inguist-language=C++
+*.txt inguist-language=C++
 *.so linguist-language=C++
 *.sh linguist-language=C++
 
